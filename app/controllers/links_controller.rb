@@ -10,12 +10,15 @@ class LinksController < ApplicationController
 		@link = Link.new
 	end
 
-	#Add new link to database
+	#Add link and random link to database
 	def create
-		
+		random_str = SecureRandom.urlsafe_base64(10)
+		link = Link.create(url: params["link"]["url"], random_string: random_str)
+		redirect_to link_path(link.random_string)
 	end
 
 	def show
+		@link = Link.find_by(random_string: params["random_string"])
 	end
 
 end
