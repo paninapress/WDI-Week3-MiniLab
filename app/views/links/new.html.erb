@@ -1,1 +1,7 @@
-create new link
+create new link form
+<div>
+	<%= form_for @link do |f| %>
+		<%= f.text_field :url, placeholder: "Type URL for example: www.google.com" %>
+		<%= f.submit %>
+	<% end %>
+</div>
