@@ -1,6 +1,7 @@
 class GoController < ApplicationController
 
 def index
+	@link = Link.last.random_string
 end
 
 def redirect

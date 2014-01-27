@@ -1,0 +1,16 @@
+<!-- PARTIAL _show.html.erb -->
+
+	<table>
+		<tr>
+			<th>You've generated this new URL:</th>
+		</tr>
+		<tr>
+			<td><%= link_to "localhost:3000/go/" + @link.random_string, redirect_path %></td>
+			<td> will now be...</td>
+			<td><%= link_to @link.url, redirect_path%></td>
+		</tr>
+		<tr>
+			<td><%= link_to "Link Stats", preview_path, class: 'navbar-brand' %></td>
+		</tr>
+
+	</table>
