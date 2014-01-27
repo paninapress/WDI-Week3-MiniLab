@@ -5,7 +5,7 @@ RitlyApp::Application.routes.draw do
 
     get "/go/:random_string", to: "go#redirect", as: :redirect
 
-    get "/go/:random_string/preview", to: "go#preview"
+    get "/go/:random_string/preview", to: "go#preview", as: :preview
  
 
  #links controller
