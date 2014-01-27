@@ -1,10 +1,16 @@
 List links history
 
 <div>
-	<% @links.each	do |link| %>
-		<br>
-		<%= link[:url] %> 
-		<%= link[:random_string] %> <br>
-		
-	<% end %>
+	<table>
+		<tr>
+			<th>Original Link</th>
+			<th>Random Generated URL</th>
+		</tr>
+		<% @links.each	do |link| %>
+			<tr>
+				<td><%= link.url %></td> 
+				<td><%= link.random_string %></td>
+			</tr>
+		<% end %>
+	</table>
 </div>
