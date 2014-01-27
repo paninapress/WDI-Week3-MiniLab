@@ -1,7 +1,17 @@
-Congrats you created this link
+<h1>Congrats!</h1>
 
-/go/<%= @link.random_string %> 
+<div>
+	<p>Your new url for <%= @link.url %> 
+	
+	will now be...
 
-<%= @link.url %>
-
-
+	<%= link_to "localhost:3000/go/" + @link.random_string, :redirect %> </p>
+</div>
+<div>
+	<h4> See
+		<%= link_to "Link Stats", :preview %>
+	</h4>
+	<h4> Create
+		<%= link_to "New Link", :new_link %> 
+	</h4> 
+</div>
