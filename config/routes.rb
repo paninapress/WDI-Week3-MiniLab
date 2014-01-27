@@ -9,11 +9,11 @@ RitlyApp::Application.routes.draw do
  
 
  #links controller
-    get "/links", to: "links#index"
+    get "/links", to: "links#index", as: :links
 
-    get "/links/new", to: "links#new"
+    get "/links/new", to: "links#new", as: :new_link
 
-    get "/links/:random_string", to: "links#show"
-
+    get "/links/:random_string", to: "links#show", as: :link
+    
     post "/links", to: "links#create" 
 end
