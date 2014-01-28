@@ -3,6 +3,7 @@ class LinksController < ApplicationController
 	#Display history of links creates
 	def index
 		@links = Link.all
+		@link = Link.new
 	end
 
 	#New instance of a link
@@ -19,6 +20,24 @@ class LinksController < ApplicationController
 
 	def show
 		@link = Link.find_by(random_string: params["random_string"])
+	end
+
+	def preview
+		@link = Link.find_by(random_string: params["random_string"])
+	end
+
+	def redirect
+		link = Link.find_by(:random_string => params[:random_string])
+		
+		x = link.url
+
+		if x.match("http://") != nil
+		        redirect_to "#{x}"
+		elsif x.match("www.") != nil
+		        redirect_to "http://" + "#{x}"
+		else
+		        redirect_to "http://www." + "#{x}"
+		end
 	end
 
 end

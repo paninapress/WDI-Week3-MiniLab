@@ -1,6 +1,7 @@
 <!-- PARTIAL _new.html.erb -->
-
-<%= form_for @link do |f| %>
+<h3>create new link </h3>
+<%= form_for(@link) do |f| %>
+		<%= f.label :url, "Type URL" %>
 		<%= f.text_field :url, placeholder: "Type URL for example: www.google.com" %>
-		<%= f.submit %>
+		<%= f.submit "Generate" %>
 	<% end %>
